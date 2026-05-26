@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roman Malanke</title>
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 32 32&#39;%3E%3Ccircle cx=&#39;16&#39; cy=&#39;16&#39; r=&#39;14&#39; fill=&#39;%23eae5df&#39;/%3E%3Ctext y=&#39;23&#39; x=&#39;9&#39; font-family=&#39;Georgia, serif&#39; font-size=&#39;20&#39; font-weight=&#39;400&#39; fill=&#39;%231a1a1a&#39;%3ER%3C/text%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="./index_files/css2" rel="stylesheet">
+    
+    <style>
+        /* --- CSS Reset & Variables --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg-color: #fcfbfa;       /* Soft, warm off-white (editorial feel) */
+            --text-main: #1a1a1a;     /* Deep charcoal, softer than pure black */
+            --text-muted: #706f6c;    /* Elegant muted gray for secondary info */
+            
+            --font-serif: 'Playfair Display', Georgia, serif;
+            --font-sans: 'Inter', system-ui, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.5; /* Slightly tighter text lines */
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100vh;
+            padding: 5% 8% 4% 8%; /* Reduced bottom layout padding */
+        }
+
+        /* --- Content Layout --- */
+        main {
+            max-width: 600px; 
+            margin-top: 0;    
+            margin-bottom: auto;
+            text-align: left; 
+        }
+
+        h1 {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 0.75rem; /* Halved from 1.5rem */
+            letter-spacing: -0.01em;
+        }
+
+        .bio {
+            font-size: 1.05rem;
+            font-weight: 300;
+            color: var(--text-main);
+            margin-bottom: 1.75rem; /* Reduced from 2.5rem */
+        }
+
+        /* --- Refined, Substantial Image Style --- */
+        .headshot {
+            width: 100%; 
+            max-width: 400px; 
+            height: auto; 
+            aspect-ratio: 4 / 5; 
+            object-fit: cover;
+            margin-bottom: 1.75rem; /* Reduced from 3rem for a much tighter link alignment */
+            filter: grayscale(100%); 
+            transition: filter 0.5s ease;
+        }
+
+        /* Subtle detail: image softens into color on hover if it's a color photo */
+        .headshot:hover {
+            filter: grayscale(0%);
+        }
+
+        /* --- Links & Navigation --- */
+        .links-container {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+
+        a {
+            color: var(--text-main);
+            text-decoration: none;
+            position: relative;
+            padding-bottom: 2px;
+            transition: color 0.3s ease;
+        }
+
+        /* Minimalist underline hover effect */
+        a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--text-main);
+            transform-origin: bottom right;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        /* --- Footer & Flag Link Styling --- */
+        footer {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 2.5rem; /* Reduced from 4rem */
+        }
+
+        /* Overrides baseline link line effect specifically for the emoji flag link */
+        .flag-link {
+            display: inline-block;
+            margin-left: 4px;
+            vertical-align: middle;
+            transition: transform 0.2s ease;
+        }
+
+        .flag-link::after {
+            display: none; 
+        }
+
+        .flag-link:hover {
+            transform: scale(1.15); 
+        }
+
+        /* Responsive adjustments for mobile */
+        @media (max-width: 600px) {
+            body {
+                padding: 6% 10% 8% 10%; 
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .headshot {
+                max-width: 100%; 
+                margin-bottom: 1.5rem;
+            }
+            .links-container {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <h1>Roman Malanke</h1>
+        
+        <p class="bio">
+            Operations builder for high-growth companies.
+        </p>
+
+        <img src="./index_files/roman.jpg" alt="Roman Malanke" class="headshot">
+
+        <div class="links-container">
+            <a href="https://linkedin.com/in/malanke" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            <a href="mailto:roman@malanke.com">Email ↗</a>
+        </div>
+    </main>
+
+</body></html>
