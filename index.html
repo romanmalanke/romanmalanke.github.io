@@ -11,7 +11,6 @@
     <link href="./index_files/css2" rel="stylesheet">
     
     <style>
-        /* --- CSS Reset & Variables --- */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -19,9 +18,9 @@
         }
 
         :root {
-            --bg-color: #fcfbfa;      /* Just some simple testing ignore this comment */
-            --text-main: #1a1a1a;     /* Deep charcoal, softer than pure black */
-            --text-muted: #706f6c;    /* Elegant muted gray for secondary info */
+            --bg-color: #fcfbfa;
+            --text-main: #1a1a1a;
+            --text-muted: #706f6c;
             
             --font-serif: 'Playfair Display', Georgia, serif;
             --font-sans: 'Inter', system-ui, sans-serif;
@@ -43,7 +42,6 @@
             padding: 5% 8% 4% 8%;
         }
 
-        /* --- Content Layout --- */
         main {
             max-width: 500px; 
             margin-top: 0;    
@@ -67,7 +65,6 @@
             margin-bottom: 1.75rem;
         }
 
-        /* --- Refined, Substantial Image Style --- */
         .headshot {
             width: 100%; 
             max-width: 400px; 
@@ -79,12 +76,10 @@
             transition: filter 0.5s ease;
         }
 
-        /* Subtle detail: image softens into color on hover if it's a color photo */
         .headshot:hover {
             filter: grayscale(0%);
         }
 
-        /* --- Links & Navigation --- */
         .links-container {
             display: flex;
             gap: 2rem;
@@ -100,7 +95,6 @@
             transition: color 0.3s ease;
         }
 
-        /* Minimalist underline hover effect */
         a::after {
             content: '';
             position: absolute;
@@ -119,7 +113,6 @@
             transform-origin: bottom left;
         }
 
-        /* --- Footer & Flag Link Styling --- */
         footer {
             font-family: var(--font-mono);
             font-size: 0.7rem;
@@ -129,10 +122,9 @@
             justify-content: space-between;
             align-items: center;
             margin-top: auto;
-            padding-top: 2.5rem; /* Reduced from 4rem */
+            padding-top: 2.5rem;
         }
 
-        /* Overrides baseline link line effect specifically for the emoji flag link */
         .flag-link {
             display: inline-block;
             margin-left: 4px;
@@ -148,7 +140,6 @@
             transform: scale(1.15); 
         }
 
-        /* Responsive adjustments for mobile */
         @media (max-width: 600px) {
             body {
                 padding: 6% 10% 8% 10%; 
