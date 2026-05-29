@@ -60,9 +60,8 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            height: 100vh;
-            height: 100dvh;
-            overflow: hidden;
+            min-height: 100vh;
+            min-height: 100dvh;
             padding: clamp(1.25rem, 4vh, 3rem) 8%;
         }
 
@@ -164,8 +163,8 @@
                 margin-bottom: clamp(0.75rem, 2vh, 1.5rem);
             }
             .links-container {
-                flex-direction: column;
-                gap: 0.6rem;
+                flex-direction: row;
+                gap: 1.5rem;
             }
         }
     </style>
