@@ -69,9 +69,13 @@
         }
 
         :root {
+            color-scheme: light dark;
+
             --bg-color: #fcfbfa;
             --text-main: #1a1a1a;
             --text-muted: #706f6c;
+            --footer-color: #a8a6a2;
+            --interest-text: #44433e;
             
             --font-serif: 'Playfair Display', Georgia, serif;
             --font-sans: 'Inter', system-ui, sans-serif;
@@ -209,7 +213,7 @@
             font-size: 0.72rem;
             font-weight: 300;
             line-height: 1.6;
-            color: #44433e;
+            color: var(--interest-text);
         }
 
         .links-container {
@@ -250,7 +254,7 @@
             font-size: 0.65rem;
             font-weight: 300;
             letter-spacing: -0.01em;
-            color: #a8a6a2;
+            color: var(--footer-color);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -279,6 +283,16 @@
             .links-container {
                 flex-direction: row;
                 gap: 1.5rem;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #151414;
+                --text-main: #ecebe8;
+                --text-muted: #9b9894;
+                --footer-color: #6b6864;
+                --interest-text: #cdcac4;
             }
         }
     </style>
