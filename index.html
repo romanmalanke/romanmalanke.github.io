@@ -149,28 +149,50 @@
             filter: grayscale(0%);
         }
 
-        .photo-overlay {
+        .photo-hint {
             position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            padding: 2rem 1rem 0.9rem;
-            font-family: var(--font-sans);
-            font-size: 0.85rem;
-            font-weight: 400;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            line-height: 1;
+            left: 0.6rem;
+            bottom: 0.6rem;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: #fff;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0));
-            opacity: 0;
-            transition: opacity 0.5s ease;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.28);
+            -webkit-backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px);
+            opacity: 0.85;
             pointer-events: none;
+            animation: hintBounce 2.4s ease-in-out infinite;
+            transition: opacity 0.4s ease, background 0.4s ease;
         }
 
-        .photo:hover .photo-overlay,
-        .photo:focus-visible .photo-overlay {
+        .photo-hint svg {
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .photo:hover .photo-hint,
+        .photo:focus-visible .photo-hint {
             opacity: 1;
+            background: rgba(0, 0, 0, 0.45);
+        }
+
+        #interestsToggle[aria-expanded="true"] .photo-hint svg {
+            transform: rotate(180deg);
+        }
+
+        @keyframes hintBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(4px); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .photo-hint {
+                animation: none;
+            }
         }
 
         .interests {
@@ -308,7 +330,9 @@
 
         <figure class="photo" id="interestsToggle" role="button" tabindex="0" aria-expanded="false" aria-controls="interests">
             <img src="roman.jpg" alt="Roman Malanke" class="headshot" width="1200" height="1472" loading="eager" decoding="async" fetchpriority="high">
-            <figcaption class="photo-overlay">Interests</figcaption>
+            <figcaption class="photo-hint" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </figcaption>
         </figure>
 
         <section class="interests" id="interests" aria-hidden="true">
